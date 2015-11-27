@@ -1,0 +1,9 @@
+{
+    "name": "jxcore-photo",
+    "description": "photo uploading sample app",
+    "version": "0.0.1",
+    "author": "Kakhaber Bazerashvili",
+    "dependencies": {
+        "express": "4.13.3"
+    }
+}
