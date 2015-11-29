@@ -36,13 +36,13 @@ function init(urls) {
 }
 
 function addPhotoToSlider(url) {
-    slider.slick('slickAdd', '<div><img src="' + url + '"/></div>');
+    slider.slick('slickAdd', '<div><img width="100%" src="' + url + '"/></div>');
+    slider.slick('slickNext');
 }
 
 function takeAndSavePhoto() {
-    navigator.device.capture.captureImage(function (imageData) {
-        var blob = dataURItoBlob('data:image/jpeg;base64,' + imageData);
-        jxcore('savePhoto').call(blob, function (err, url) {
+    navigator.camera.getPicture(function (data) {
+        jxcore('savePhoto').call(data, function (err, url) {
             if (err) {
                 alert(err);
             } else {
@@ -51,21 +51,12 @@ function takeAndSavePhoto() {
         });
     }, function () {
         alert('Taking photo failed: ' + err);
+    }, {
+        quality: 25,
+        destinationType : navigator.camera.DestinationType.DATA_URL,
+        sourceType: navigator.camera.PictureSourceType.CAMERA,
+        encodingType: navigator.camera.EncodingType.JPEG,
+        targetwidth: 900,
+        targetHeight: 900
     });
 }
-
-function dataURItoBlob(dataURI, callback) {
-    var byteString = atob(dataURI.split(',')[1]);
-    var mimeString = dataURI.split(',')[0].split(':')[1].s
-
-    var ab = new ArrayBuffer(byteString.length);
-    var ia = new Uint8Array(ab);
-    for (var i = 0; i < byteString.length; i++) {
-        ia[i] = byteString.charCodeAt(i);
-    }
-
-    var bb = new BlobBuilder();
-    bb.append(ab);
-    return bb.getBlob(mimeString);
-}
-
