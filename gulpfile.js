@@ -1,9 +1,6 @@
 var gulp = require('gulp'),
     shell = require('gulp-shell'),
-    watch = require('gulp-watch'),
-    path = require('path'),
     download = require('gulp-download'),
-    clean = require('gulp-clean'),
     fs = require('fs');
 
 gulp.task('download-jxcore-cordova', function (callback) {

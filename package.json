@@ -1,14 +1,11 @@
 {
     "name": "jxcore-photo",
-    "description": "photo uploading sample app",
+    "description": "Sample JXcore cordova app for saving photos in sqlite db",
     "version": "0.0.1",
     "author": "Kakhaber Bazerashvili",
     "devDependencies": {
-        "del": "2.1.0",
         "gulp": "3.9.0",
-        "gulp-clean": "0.3.1",
         "gulp-download": "0.0.1",
-        "gulp-shell": "0.4.0",
-        "gulp-watch": "4.2.4"
+        "gulp-shell": "0.4.0"
     }
 }
