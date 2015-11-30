@@ -11,3 +11,5 @@ To run on android just type:
 ```bash
 gulp run-android
 ```
+
+Note! Low ram devices (ram <= 512mb) **may** terminate app due to lack of memory.
