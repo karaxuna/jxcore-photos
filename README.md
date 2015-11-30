@@ -1,5 +1,7 @@
 ## Sample JXcore cordova app for saving photos in sqlite db
 
+![Android](./screens/android.png "Android")
+
 Supposing you have already installed [JXcore](http://jxcore.com/downloads/), cordova and gulp globally, now install local npm modules:
 
 ```bash
